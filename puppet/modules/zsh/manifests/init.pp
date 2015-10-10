@@ -1,5 +1,5 @@
 class zsh {
-  package { ['zsh']:
+  package { 'zsh':
     ensure => present;
   }
 
