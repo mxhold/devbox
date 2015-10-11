@@ -12,6 +12,7 @@ An Ubuntu 14.04 (Trusty Tahr) machine with the following installed:
     - unzip
   - zsh
   - tmux 2.0
+  - git 2.6.1
 
 ## Usage
 

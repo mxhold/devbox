@@ -1,6 +1,6 @@
 class zsh {
   package { 'zsh':
-    ensure => present;
+    ensure => present,
   }
 
   file {
@@ -8,7 +8,7 @@ class zsh {
       owner => 'vagrant',
       group => 'vagrant',
       mode  => '0644',
-      source => 'puppet:///modules/zsh/zshrc';
+      source => 'puppet:///modules/zsh/zshrc',
   }
 
   user { "vagrant":
