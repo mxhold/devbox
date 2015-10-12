@@ -21,4 +21,10 @@ class rubyinstall {
     require => Exec['extract-ruby-install'],
     creates => '/usr/local/bin/ruby-install',
   }
+
+  file { '/home/vagrant/.rubies':
+    owner => 'vagrant',
+    group => 'vagrant',
+    ensure => 'directory',
+  }
 }

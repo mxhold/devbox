@@ -1,30 +1,24 @@
-class ruby {
-  exec { 'download-ruby-2.2.1':
+define ruby($version) {
+  exec { "download-ruby-${version}":
     cwd => '/tmp',
-    command => 'wget https://rvm.io/binaries/ubuntu/14.04/x86_64/ruby-2.2.1.tar.bz2',
+    command => "wget https://rvm.io/binaries/ubuntu/14.04/x86_64/ruby-${version}.tar.bz2",
     path => ['/usr/bin', '/bin'],
-    creates => '/tmp/ruby-2.2.1.tar.bz2',
+    creates => "/tmp/ruby-${version}.tar.bz2",
   }
 
-  exec { 'extract-ruby-2.2.1':
+  exec { "extract-ruby-${version}":
     cwd => '/tmp',
-    command => 'bzip2 -cd ruby-2.2.1.tar.bz2 | tar xf -',
+    command => "bzip2 -cd ruby-${version}.tar.bz2 | tar xf -",
     path => ['/usr/bin', '/bin'],
-    creates => '/tmp/ruby-2.2.1',
-    require => Exec['download-ruby-2.2.1'],
+    creates => "/tmp/ruby-${version}",
+    require => Exec["download-ruby-${version}"],
   }
 
-  file { '/home/vagrant/.rubies':
-    owner => 'vagrant',
-    group => 'vagrant',
-    ensure => 'directory',
-  }
-
-  exec { 'move-ruby-2.2.1':
+  exec { "move-ruby-${version}":
     cwd => '/tmp',
-    command => 'mv ruby-2.2.1 /home/vagrant/.rubies/',
+    command => "mv ruby-${version} /home/vagrant/.rubies/",
     path => ['/usr/bin', '/bin'],
-    creates => '/home/vagrant/.rubies/ruby-2.2.1',
-    require => [Exec['extract-ruby-2.2.1'], File['/home/vagrant/.rubies']],
+    creates => "/home/vagrant/.rubies/ruby-${version}",
+    require => [Exec["extract-ruby-${version}"], File['/home/vagrant/.rubies']],
   }
 }
