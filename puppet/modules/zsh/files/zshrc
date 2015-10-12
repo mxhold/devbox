@@ -24,3 +24,11 @@ setopt inc_append_history
 HISTFILE=~/.zhistory
 HISTSIZE=4096
 SAVEHIST=4096
+
+
+if [ -d ~/.zsh.d ]; then
+  for i in ~/.zsh.d/*.sh; do
+    . $i
+  done
+  unset i
+fi

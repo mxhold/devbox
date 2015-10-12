@@ -13,5 +13,8 @@ include git
 include zsh
 include tmux
 include vim
+include rubyinstall
+include ruby
+include chruby
 
 Class['git'] -> Class['vim']
