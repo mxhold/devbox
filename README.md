@@ -9,7 +9,7 @@ An Ubuntu 14.04 (Trusty Tahr) machine with the following installed:
   - tmux
   - git
   - vim
-  - ruby 2.1.5 and 2.2.1
+  - ruby 1.9.3p551, 2.0.0p598, 2.1.5, and 2.2.1
   - chruby
   - ruby-install
 
