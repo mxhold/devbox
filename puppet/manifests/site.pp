@@ -32,5 +32,6 @@ ruby { 'ruby-2.1.5':
 }
 
 include chruby
+include powerline
 
 Class['git'] -> Class['vim']
