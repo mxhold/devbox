@@ -14,6 +14,7 @@ include zsh
 include tmux
 include vim
 include rubyinstall
+include postgres
 
 ruby { 'ruby-1.9.3':
   version => '1.9.3-p551',
