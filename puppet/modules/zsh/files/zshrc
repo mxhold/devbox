@@ -34,3 +34,4 @@ if [ -d ~/.zsh.d ]; then
 fi
 
 EDITOR=vim
+VISUAL=vim
