@@ -15,6 +15,8 @@ include tmux
 include vim
 include rubyinstall
 include postgres
+include erlang
+include elixir
 
 ruby { 'ruby-1.9.3':
   version => '1.9.3-p551',
@@ -36,3 +38,4 @@ include chruby
 include powerline
 
 Class['git'] -> Class['vim']
+Class['erlang'] -> Class['elixir']
