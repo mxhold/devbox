@@ -8,6 +8,8 @@ apt::source { 'debian_testing':
   allow_unsigned => true, # yolo
 }
 
+Apt::Source['debian_testing'] -> Class["apt::update"] -> Package <| |>
+
 include utils
 include git
 include zsh

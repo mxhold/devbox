@@ -1,7 +1,6 @@
 class tmux {
   package { 'tmux':
     ensure => 'latest',
-    require => [Apt::Source['debian_testing'], Class['apt::update']],
   }
 
   file {
